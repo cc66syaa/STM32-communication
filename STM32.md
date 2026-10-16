@@ -1,7 +1,5 @@
 # STM32串口通信综合实验
 
-[TOC]
-
 > **AI 辅助说明**：本次实验利用 AI 帮我理解了串口原理、排查代码报错、解析实验现象。然后自己独立完成了硬件接线、程序调试、仿真操作、实验观测与数据分析等。
 
 ## 前言
@@ -264,17 +262,27 @@ CH340 是 USB 转串口芯片，电脑没有原生串口，依靠 CH340 实现 U
   2. 电脑打开 XCOM，选择对应 COM 口，波特率 115200，打开串口。
   3. **实验组 1：去掉 HAL_Delay** STM32 无延时循环发送，观察串口助手：大量数据、丢包、乱码、截断。
   
-  ![image-20261015033856769](STM32串口通信综合实验.assets/image-20261015033856769.png)
+  
+
+https://github.com/user-attachments/assets/b7fa93a7-1dd5-4e50-a853-9b4fb77b989a
+
+
   
   4.**实验组 2：开启 HAL_Delay (500)** 间隔发送，串口助手稳定接收`hello windows!`。
   
-  ![image-20261015034010958](STM32串口通信综合实验.assets/image-20261015034010958.png)
+
+
+https://github.com/user-attachments/assets/0aec4bda-f2f8-49c2-9d7a-201abe5e989f
+
+
   
   5.串口助手发送`#`，STM32 停止输出；发送`*`恢复输出。
   
-  ![image-20261015034131399](STM32串口通信综合实验.assets/image-20261015034131399.png)
-  
-  ![image-20261015034202452](STM32串口通信综合实验.assets/image-20261015034202452.png)
+
+
+https://github.com/user-attachments/assets/e8390455-b14d-424b-84c9-e5af80e45147
+
+
   
   
   
@@ -472,9 +480,11 @@ CH340 是 USB 转串口芯片，电脑没有原生串口，依靠 CH340 实现 U
   2. XCOM 打开串口，观察自动输出字符串。
   3. 发送`#`暂停；发送`*`恢复发送。
   
-  ![image-20261015034131399](STM32串口通信综合实验.assets/image-20261015034131399.png)
-  
-  ![image-20261015034202452](STM32串口通信综合实验.assets/image-20261015034202452.png)
+
+
+https://github.com/user-attachments/assets/746c64d6-cb5e-4ac2-8568-be2881e24360
+
+
   
   ## 任务二：（2）串口 DMA 高速发送实验
   
@@ -622,7 +632,11 @@ CH340 是 USB 转串口芯片，电脑没有原生串口，依靠 CH340 实现 U
   1. 编译下载，打开 XCOM 串口助手。
   2. 观察串口高速连续输出数据；可提高波特率测试高速传输。
   
-  ![image-20261015040156052](STM32串口通信综合实验.assets/image-20261015040156052.png)
+
+
+https://github.com/user-attachments/assets/8912fef8-f706-4bca-9a4b-68e5b3e6267e
+
+
   
   > 原理说明：DMA 接管数据搬运，CPU 在发送同时可以运行其他任务，相比中断方式，CPU 占用率更低，适合大批量高速传输。
   
